@@ -1,0 +1,16 @@
+[package]
+name = "storybook"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-files = "0.6.10"
+actix-web = "4.14.1"
+
+[build-dependencies]
+oxc_allocator = "0.144.0"
+oxc_codegen = "0.144.0"
+oxc_parser = "0.144.0"
+oxc_semantic = "0.144.0"
+oxc_span = "0.144.0"
+oxc_transformer = "0.144.0"
