@@ -1,0 +1,7 @@
+1: What is Hack Club?
+2: Setting up Hack Club Auth and Slack
+3: Setting up Spaces, Hackatime and Python
+4: Hello world with library + AI usage guidelines
+5: Library usage continued
+6: GitHub and Submitting
+7: Where to go next
