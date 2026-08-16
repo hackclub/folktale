@@ -1,6 +1,6 @@
 # Welcome to Hack Club Folktale!
 
-I'm so glad that you decided to give this a go. Picking up new skills isn't an easy thing to do, and it's great to see you taking up the challenge of programming. By the end of this guide, you'll be all set up with Hack Club's systems, submitting your very own Choose-Your-Own-Adventure game in Python.
+I'm so glad that you decided to give this program from Hack Club a go. Picking up new skills isn't an easy thing to do, and it's great to see you taking up the challenge of programming. By the end of this guide, you'll be all set up with Hack Club's systems, submitting your very own branching narrative game in Python. Then, we'll send you a stickersheet!
 
 Before we jump into making games though, I want to give you a little overview on what Hack Club is and what it offers.
 
