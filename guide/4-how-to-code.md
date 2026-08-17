@@ -30,6 +30,8 @@ print("1" + "2")
 ```
 The first one treats the two as numbers, adds them like numbers, and prints out `3`.
 
+In Python, `+` adds numbers, `-` subtracts them, `*` (not `x`) multiplies, and `/` divides.
+
 The second one treats the two as text instead of numbers, "adds" them by sticking one on the end of the other, and will print out `12`.
 
 So we've learned a fair bit about printing this out for the user, but to make a branching story game, you'll need to be able to ask the user for input. We use another function for this, fittingly named the `input` function.
@@ -166,6 +168,17 @@ Ok, so to recap what's happening here:
 
 You can have as many `elif` statements as you want after an `if` statment.
 
+There's one last thing that you will need: `while` loops. These are sort of like `if` statements, but instead of running the code inside them once if the condition is true, they will run the code inside them over and over so long as that condition is true. Here's a quick example that counts from 1 to 10:
+```python
+counter = 1
+while counter <= 10:
+    print(counter)
+    counter = counter + 1
+```
+First, we make a variable called `counter` set to 1. We then make a `while` loop that runs as long as the counter is less than or equal to ten. We reassign counter to itself plus one, incrementing it for the next iteration.
+
+Quick tip, you can rewrite `counter = counter + 1` as `counter += 1`. They are equivalent.
+
 With that, you now know everything that you need to get started on a branching story game! Here's a quick recap of everything covered so far:
 - The `print` function will output text to the user
 - The `input` function will replace itself with whatever was inputted by the user, and the prompt will be a parameter
@@ -176,5 +189,6 @@ With that, you now know everything that you need to get started on a branching s
 - `elif` statements are the same as `if` statement, but they only trigger if the `if` and `elif` statements above them don't execute
 - `else` statements are a catch-all for if all `if` and `elif` statements don't execute
 - The `and` and `or` keywords can combine conditions together
+- `while` statements are basically `if` statements that run continuously so long as the condition is true
 
 Now, time to actually start game development!
