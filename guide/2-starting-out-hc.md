@@ -17,6 +17,6 @@ Say hi, meet some people. Also, please do put any questions that come up into th
 
 After you're done chatting, you'll need to verify in Hack Club Auth before you can set up a coding environment. Hack Club needs to make sure that all prizes go to teenagers, so we ask everyone to verify their identity.
 
-Go to [auth.hackclub.com](auth.hackclub.com) and start the process through either the "Verify your identity" card in the "Complete your profile" section, or the "ID Verification" tab on the left side. This page will guide you through verification, so make your way back here when you're done and approved.
+Go to [auth.hackclub.com](https://auth.hackclub.com) and start the process through either the "Verify your identity" card in the "Complete your profile" section, or the "ID Verification" tab on the left side. This page will guide you through verification, so make your way back here when you're done and approved.
 
 With that out of the way, it's time to set up the coding environment!

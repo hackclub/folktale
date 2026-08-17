@@ -4,7 +4,7 @@ The process for submitting a project can differ quite a lot from one You-Ship-We
 
 Before you can submit though, you will have to upload your program to a service like GitHub.
 
-GitHub is a website that is basically social media for programmers. It lets you upload code, manage changes to it, and find other peoples' projects.
+GitHub is a website that is basically social media for programmers. It lets you upload code, manage changes to it, and find other people's projects.
 
 Go to [GitHub.com](https://github.com) and enter your email to sign up in the big box on the main page. You will be prompted to fill in some information, verify your email, then you're good to go!
 

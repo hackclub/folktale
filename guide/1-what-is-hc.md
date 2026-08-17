@@ -7,7 +7,7 @@ Before we jump into making games though, I want to give you a little overview on
 Hack Club is a global nonprofit organization with the goal of getting teenagers to build awesome projects. We have a bunch of ways that we try to do this. Here's a few:
 
 ### Clubs
-Hack Club supports coding clubs around the world. We call them Hack Clubs. There are totally student-run, but we offer workshops to follow, stickers and posters for advertisement, events to join, prizes to work for, and more! Check out if there's one at your school, and maybe consider starting one when you have enough confidence with all of this coding stuff.
+Hack Club supports coding clubs around the world. We call them Hack Clubs. They're totally student-run, but we offer workshops to follow, stickers and posters for advertisement, events to join, prizes to work for, and more! Check out if there's one at your school, and maybe consider starting one when you have enough confidence with all of this coding stuff.
 
 [Learn more here!](https://hackclub.com/clubs)
 

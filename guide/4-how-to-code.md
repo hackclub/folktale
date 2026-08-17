@@ -17,11 +17,11 @@ If we had two of them:
 print("Line 1")
 print("Line 2")
 ```
-The parentheses of the first instruction here grabs "Line 1" for itself, and "Line 2" is its own thing for the next instruction. If you run this code, you'll see that two seperate lines get printed out, one for each of the instructions.
+The parentheses of the first instruction here grabs "Line 1" for itself, and "Line 2" is its own thing for the next instruction. If you run this code, you'll see that two separate lines get printed out, one for each of the instructions.
 
 Quick vocabulary nibble, "instruction" is technically the wrong word to use here. I was using it since I think it conveys the message better, but I will be calling these types of lines of code by the more accurate term "function" from here on out.
 
-Looping back to those `print` functions there, I never went over what the quotes mean. Whenever you see quotes (single and double quotes are equivalent in Python), that means everything inside them is treated as one big chunk of text. If you didn't have them, the Python interpreter might not be sure if this is all part of one argument or that it's not text at all.
+Looping back to those `print` functions there, I never went over what the quotes mean. Whenever you see quotes (single and double quotes are equivalent in Python), that means everything inside them is treated as one big chunk of text. If you didn't have them, the Python interpreter might not be sure if this is all part of one parameter or that it's not text at all.
 
 That last part is important. Let's say we had this bit of code here:
 ```python
@@ -98,40 +98,61 @@ Computers love things starting at zero. This means to get the first character in
 But now, we can check if it's a vowel or not. To do this, we use something called an `if` statement. This will run a certain bit of code only if the condition inside it is true. An `if` statement to check if that first character is equal to A would look like this:
 ```python
 if first_character == "A":
-    print("It's A!")
+	print("It's A!")
 ```
-Few things to unpack here. For the `if` statement itself, it's pretty simple. We just check if the first character is equal to text containing "A", and if so the `print` function runs. Note that we use a double equals sign for checking equality, since the single equals sign is already taken for creating and resassigning variables.
+Few things to unpack here. For the `if` statement itself, it's pretty simple. We just check if the first character is equal to text containing "A", and if so the `print` function runs. Note that we use a double equals sign for checking equality, since the single equals sign is already taken for creating and reassigning variables.
+
+There are a few other symbols for comparison. Here's a quick table:
+
+| Symbol | Meaning               |
+| ------ | -------               |
+| ==     | equal                 |
+| !=     | not equal             |
+| <      | less than             |
+| >      | greater than          |
+| <=     | less than or equal    |
+| >=     | greater than or equal |
 
 Now, you'll notice that the print statement is indented with a tab here. In Python, this tab means that these functions belong to the statement above it. If you had the following statement:
 ```python
 if first_character == "A":
-    print("It's A!")
-    print("It's A again!")
+	print("It's A!")
+	print("It's A again!")
 print("This will always print")
 ```
 The first two `print` functions are indented, so they belong with the `if` statement and will only activate if that statement's condition is true. The third one isn't indented though, which means it doesn't belong to the `if` statement. As such, it'll run whether or not the `if` statement activates.
 
-To check if any of them are vowels, we will need to be able to combine the expressions in the `if` statement. Two ways of doing this are the `and` and `or` statements. The `and` statement will combine two conditonal statements into one, but **both** of the example inputs need to be true for the combination to fire. The `or` statement by contrast, will fire if just **one or the other** is true. Here's some examples:
+With indenting, we can put `if` statements inside `if` statements like this:
+```python
+if first_character == "A":
+	print("It's A!")
+	if answer[1] == "A":
+		print("The second character is also A!")
+print("This will always print")
+```
+Though if you're getting too many `if` statements deep, you maybe should rethink the way you're writing the code. You shouldn't really run into this in Folktale, but [this](https://www.youtube.com/watch?v=CFRhGnuXG-4) video raises some interesting points for when you get more proficient with coding.
+
+To check if any of them are vowels, we will need to be able to combine the expressions in the `if` statement. Two ways of doing this are the `and` and `or` statements. The `and` statement will combine two conditional statements into one, but **both** of the example inputs need to be true for the combination to fire. The `or` statement by contrast, will fire if just **one or the other** is true. Here's some examples:
 ```python
 number = 8
 
 # Both of these conditions are true. That means the 'and' statement connecting them will also be true, and the 'if' statement will fire
 if number == 8 and number / 4 == 2:
-    print("This will print")
+	print("This will print")
 
 # The second condition is true, but the first one isn't. However, the 'or' operator only needs one or the other to fire, so this 'if' statement will activate
 if number == 3 or number * 2 == 16:
-    print("This will print")
+	print("This will print")
 
 # Same two conditions as before, but with 'and' instead of 'or'. Since 'and' needs both of the conditions to be true and first one isn't, this 'if' statement will not activate
 if number == 3 and number * 2 == 16:
-    print("This will not print")
+	print("This will not print")
 ```
 
-So to check if that first character is a vowel, we can just check if it matches a, e, i, o, or u.
+So to check if that first character is a vowel, we can just check if it matches a, e, i, o, or u (we'll get to 'y').
 ```python
 if first_character == "a" or first_character == "e" or first_character == "i" or first_character == "o" or first_character == "u":
-    print("It's a vowel!")
+	print("It's a vowel!")
 ```
 You might have noticed a problem here though. We're only checking if it's lowercase. What if it's uppercase? Well, there's a function for that, the `lower()` function. Go back to where you're defining `first_character`:
 ```python
@@ -139,12 +160,12 @@ first_character = answer[0].lower()
 ```
 This function looks different than all of the others. Since the `lower` function is so unique to blocks of text and doesn't really make sense for any other type of data, the creators of Python decided to use this type of syntax instead. Think of it as belonging to the block of text type in particular, so we use the dot syntax instead of feeding in `answer[0]` as a parameter. 
 
-Now, we've got to check if it's a consonant. We could put another `if` statement with all twenty consonants, but that's messy. Thankfully, Python has a better way of doing this: the `else` statement. These attach on to an `if` statement, and fire if the if statement is false. Applying this to our problem:
+Now, we've got to check if it's a consonant. We could put another `if` statement with all twenty consonants (again, we'll get to 'y'), but that's messy. Thankfully, Python has a better way of doing this: the `else` statement. These attach on to an `if` statement, and fire if the if statement is false. Applying this to our problem:
 ```python
 if first_character == "a" or first_character == "e" or first_character == "i" or first_character == "o" or first_character == "u":
-    print("It's a vowel!") 
+	print("It's a vowel!") 
 else:
-    print("It's a consonant!")
+	print("It's a consonant!")
 ```
 Pay special attention to the way this is indented. The `else` statement is a nice catch-all for anything that doesn't meet the `if` statement.
 
@@ -154,11 +175,11 @@ This basically just acts like an `if` statement, but has to attach to one and on
 
 ```python
 if first_character == "a" or first_character == "e" or first_character == "i" or first_character == "o" or first_character == "u":
-    print("It's a vowel!")
+	print("It's a vowel!")
 elif first_character == "y":
-    print("It's both!")
+	print("It's both!")
 else:
-    print("It's a consonant!")
+	print("It's a consonant!")
 ```
 
 Ok, so to recap what's happening here:
@@ -166,18 +187,42 @@ Ok, so to recap what's happening here:
 - If it's not a vowel, we move on to the `elif` statement. It checks if `first_character` is equal to "y", and runs the code inside itself printing "It's both!" if this condition is true.
 - Finally, if both of the above checks fail, the `else` block runs and we print out "It's a consonant".
 
-You can have as many `elif` statements as you want after an `if` statment.
+You can have as many `elif` statements as you want after an `if` statement.
 
 There's one last thing that you will need: `while` loops. These are sort of like `if` statements, but instead of running the code inside them once if the condition is true, they will run the code inside them over and over so long as that condition is true. Here's a quick example that counts from 1 to 10:
 ```python
 counter = 1
 while counter <= 10:
-    print(counter)
-    counter = counter + 1
+	print(counter)
+	counter = counter + 1
 ```
 First, we make a variable called `counter` set to 1. We then make a `while` loop that runs as long as the counter is less than or equal to ten. We reassign counter to itself plus one, incrementing it for the next iteration.
 
 Quick tip, you can rewrite `counter = counter + 1` as `counter += 1`. They are equivalent.
+
+Another quick tip, when you're developing with `while` loops, it's easy to accidentally make an infinite loop. You can press `Ctrl + C` or `Cmd + C` to exit out of the running program.
+
+Think about these conditions that we've been sticking into the `while` and `if` statements. We've been thinking about them in terms of making those statements go, but what actually happens under the hood? Well, Python has two more statements, `True` and `False`. You could plug them into `if` and `while` statements to make kind of unhelpful statements:
+```python
+if True:
+	print("This will always run")
+while False:
+	print("This will never run")
+```
+But what are we doing when we check equality? Well, just think of that statement as collapsing into either `True` or `False` when we evaluate it. Now, for our game, we will need to be able to loop continuously until we want to exit. A good way of doing this is storing a raw `True` or `False` value inside a variable that we can change at any time. Here's the same counter example from before but using what's called a boolean variable:
+```python
+counter = 1
+running = True
+while running:
+	print(counter)
+	counter = counter + 1
+	if counter >= 10:
+		running = False
+```
+Remember, the variable can be thought of as being replaced by its value. `running` keeps getting swapped out for `True` and then finally `False`, which ends the `while` loop.
+
+This code does the exact same thing as before. For this example it's more complicated, but you'll see in the next section how this becomes an elegant way to handle looping.
+
 
 With that, you now know everything that you need to get started on a branching story game! Here's a quick recap of everything covered so far:
 - The `print` function will output text to the user
@@ -186,9 +231,10 @@ With that, you now know everything that you need to get started on a branching s
 - The `int` function converts text to a number
 - You can get the first character from a bit of text with `variable[0]`, the second with `variable[1]`, and so on
 - `if` statements run the code indented underneath them if the condition inside them is true
-- `elif` statements are the same as `if` statement, but they only trigger if the `if` and `elif` statements above them don't execute
+- `elif` statements are the same as `if` statements, but they only trigger if the `if` and `elif` statements above them don't execute
 - `else` statements are a catch-all for if all `if` and `elif` statements don't execute
 - The `and` and `or` keywords can combine conditions together
 - `while` statements are basically `if` statements that run continuously so long as the condition is true
+- `True` and `False` are what's actually happening when we conditionally evaluate something like `x == 3` or `x != 3` (`!=` is not equal)
 
 Now, time to actually start game development!

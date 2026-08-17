@@ -28,17 +28,21 @@ First, close out a bit of the clutter. I would X out of the notification at the 
 
 Look in the bottom left corner. You might see a "Restricted Mode" card there. If you click it, it'll open up a window where you can trust the folder. You'll need to do this to access needed features.
 
-If you don't like light theme, you can switch to dark. First open the Command Palette (this lets you run special editor commands) by either pressing F1 or clicking the three-lines (☰) and going to View > Command Palette. Search "Toggle theme" and selection the option that reads "Preferences: Toggle between Light/Dark Themes".
+Also in the bottom left corner you'll find the Hackatime widget. It'll be saying something like "Start coding to track your time", then it'll tell you how long you have been coding today. If you don't see this, **your Hackatime isn't working properly and your submission may not be valid**. Always make sure the time is tracking, and if it isn't, troubleshoot yourself or ask for help in the *#folktale* Slack channel.
+
+If you don't like light theme, you can switch to dark. First open the Command Palette (this lets you run special editor commands) by either pressing F1 or clicking the three-lines (☰) and going to View > Command Palette. Search "Toggle theme" and select the option that reads "Preferences: Toggle between Light/Dark Themes".
+
+At some point, you might get some reconnection errors with the instance. Go back to the Hack Club Spaces dashboard, click "Start", and then click "Open".
 
 Now, think back to earlier in this section when we were learning about the special software that turns our rules-based text into something that a computer can understand. We'll actually set that up now. I'm going to throw a few definitions at you:
 - **Python**: This is the programming language that we will be using to make our branching story game. Programming languages are the rules that our text has to be able to follow in order for a computer to be able to understand it. Python is known to be one of the easier programming languages to pick up because its rules are more forgiving.
 - **Python code**: Text that follows Python's rules, so it can be turned into something a computer can understand.
-- **The Python interpreter**: This is the piece of software that looks at your Python code, makes sure it follows Python's rules, then tells to computer what to do based on the code you gave it.
+- **The Python interpreter**: This is the piece of software that looks at your Python code, makes sure it follows Python's rules, then tells the computer what to do based on the code you gave it.
 
 Thankfully, the Visual Studio Code instance you're looking at right now in Hack Club Spaces makes it really easy to install and use the Python interpreter. To install it:
 1. Go to the Extensions tab by clicking the button in the sidebar with four squares but one is rotated, or doing Ctrl + Shift + X
 2. Search "python" and install the Python extension by ms-python
-3. All done! You might see a yellow warning in the bottom right corner saying something like `Select Interpreter`. You can safely ignore this for Folktale.
+3. All done! You might see a yellow warning in the bottom right corner saying something like `Select Interpreter`. You might be able to ignore this. If not, the path you should enter is `/bin/python3`
 
 We've now set up the Python interpreter. Let's test it out!
 
