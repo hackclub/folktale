@@ -118,7 +118,7 @@ If you get stuck with anything, ask away in the *#folktale* Slack channel.
 
 To re-iterate the AI policy from the FAQ on the homepage, there is to be **zero** generative AI usage for Folktale. While these tools can be legitimately helpful, I would *heavily* encourage you avoid them until later in your programming journey. Productive struggle is the root of learning, and AI tools rob the teachings that let you use these tools effectively.
 
-You need to spent at least one hour working on this before you can submit it. If you haven't met this, there's definitely another room or something that you could add. You can check your time at the [Hackatime Dashboard](https://hackatime.hackclub.com/). We have special prizes for especially high effort submissions. TODO: elaborate on the prize
+You need to spent at least one hour working on this before you can submit it. If you haven't met this, there's definitely another room or something that you could add. You can check your time at the [Hackatime Dashboard](https://hackatime.hackclub.com/). We have swag for especially high effort submissions here.
 
 Hack Club is a nonprofit that relies on donations in order to give out prizes to teenagers all around the world. As such, we have to verify that all hours are well substantiated. Please don't try to game the system by inflating your time through a rock on the keyboard or something. We'll catch it through our fraud tools, have to go through a process, and it won't end well for anyone.
 
