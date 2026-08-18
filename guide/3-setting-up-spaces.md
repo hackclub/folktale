@@ -37,7 +37,8 @@ Click the "+ Create New Space" button. Set the three fields there like this:
 - **Space Type**: Make sure this is set to VS Code Server
 - **Password**: Pick a password that you can remember
 - **Home Directory**: Setting this will let you pick the name of your project. This field should be set to
-  `/config/PROJECTNAME`, but swap out PROJECTNAME here with whatever you'll want to call your game. If you aren't sure, just put
+  `/config/PROJECTNAME`, but swap out PROJECTNAME here with whatever you'll want to call your game. If you aren't sure,
+  just put
   `/config/folktale_game`.
 
 If your identity is successfully verified in Hack Club Auth, Spaces should let you click the big "Create Space" button!

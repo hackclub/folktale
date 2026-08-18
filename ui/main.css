@@ -181,3 +181,39 @@ a {
     border-radius: 24px;
     border-style: solid;
 }
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 32px 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.ref-holder {
+    --ref-radius: 24px;
+    --ref-inner-radius: 8px;
+}
+
+.ref-entry {
+    margin-top: 16px;
+    background-color: #1f1034;
+    border-radius: var(--ref-radius);
+    overflow: hidden;
+}
+
+.ref-title {
+    background-color: #9e73f3;
+    width: fit-content;
+    margin: 0;
+    padding: 16px;
+    border-radius: var(--ref-radius) 0 var(--ref-inner-radius) 0;
+}
+
+.ref-entry p {
+    padding: 8px;
+}
+
+.ref-content {
+    padding: 16px;
+}
