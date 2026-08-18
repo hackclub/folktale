@@ -7,8 +7,8 @@
     overflow-x: hidden;
 
     --separator-top: 64.5vw;
-    --separator-width: 101vw;
     --separator-left: -0.5vw;
+    --separator-width: 101vw;
     --separator-height: calc(var(--separator-width) * 29.23464 / 210.15952);
     --ground-tile: calc(var(--separator-width) * 200 / 210.15952);
     --ground-overlap: 2px;

@@ -7,7 +7,7 @@ const SPAWN_INTERVAL = 500
 const MAX_SIZE = 80
 const MAX_COUNT = 40
 const SPAWN_HEIGHT = -MAX_SIZE
-const INITIAL_LEAVES = 16
+const INITIAL_LEAVES = 18
 
 function leaf_width(leaf) {
     return Math.min(MAX_SIZE, (window.innerWidth / 10) * leaf.size_factor)
