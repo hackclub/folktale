@@ -102,6 +102,8 @@ The word puzzle is pretty similar to the math one, except the response is open e
 			print("Sorry, that is incorrect")
 ```
 
+![](images/27-example-output.png)
+
 And that's just about it! You don't have to close out with an `else` statement if it isn't needed. There's one more thing that I want to do. Just for the sake of aesthetics, I want to add a blank line of space each time this loop runs. I did this by adding the following to the end of the while loop:
 ```python
 	print("")

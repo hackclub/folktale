@@ -4,7 +4,7 @@ I'm so glad that you decided to give this program from Hack Club a go. Picking u
 
 Before we jump into making games though, I want to give you a little overview on what Hack Club is and what it offers.
 
-![hack club logo](images/hc-logo.svg)
+![](images/hc-logo.svg)
 
 Hack Club is a global nonprofit organization with the goal of getting teenagers to build awesome projects. We have a bunch of ways that we try to do this. Here's a few:
 
@@ -23,6 +23,8 @@ Some of these programs are super specialized, others accept a much more general 
 ### The Slack Community
 Hack Club manages a large community of thousands of teenagers on the platform Slack. Here's where you can hang out with other teens and make projects together. You'll also find events announced here, and help channels for all sorts of things. The *#folktale* channel is where you can get help with this very program if you get stuck at any point.
 
+![](images/1-slack.png)
+
 We will look at how to join the Slack later on in this guide.
 
 ### Some Other Things
@@ -34,5 +36,7 @@ Here's a quick list of other things that Hack Club offers:
 - Nest: Free servers
 - Spaces: Free web code and CAD editors
 - Print Legion: Free 3D prints from Hack Clubbers around the world
+
+![](images/hcb-dark.svg)
 
 Hack Club offers a bunch of different things to help you with any type of project you want. Now, let's get you set up with Hack Club!

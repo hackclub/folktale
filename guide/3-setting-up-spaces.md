@@ -12,6 +12,8 @@ Click the big "Get Started" button on the homepage of [spaces.hackclub.com](http
 "Continue with Hack Club" signup option, which will prompt you to sign in and authorize with the Hack Club Auth account
 that you just created.
 
+![](images/7-space-login.png)
+
 Now, you should be in the Spaces dashboard. Before you set up the spot where you'll develop your project, let's set up
 Hackatime.
 
@@ -25,9 +27,14 @@ Let's set it up with Spaces! Click the "Settings" button in the top right corner
 the top, you will see a field called Hackatime API Key. In the little bit of text underneath it, you'll find a link that
 will bring you right to this key.
 
+![](images/8-space-settings.png)
+![](images/9-space-hackatime-link.png)
+
 You might have to sign in with Hack Club Auth again. It's also possible that you might be redirected to a setup page
 that won't redirect you back. If this happens, you will have to go back to the Spaces settings page and click the link
 again. It'll be quite obvious once you manage to get to the page with the API key on it.
+
+![](images/10-hackatime-api.png)
 
 Copy and paste this API key back into the Spaces settings field, then click "Save Profile". Finally, return to the
 dashboard. It's time to make our coding environment!
@@ -41,7 +48,11 @@ Click the "+ Create New Space" button. Set the three fields there like this:
   just put
   `/config/folktale_game`.
 
+![](images/11-create-space.png)
+
 If your identity is successfully verified in Hack Club Auth, Spaces should let you click the big "Create Space" button!
+
+![](images/13-open-space.png)
 
 If all goes well, you should see a card with a blue "Open" button. Click it!
 
@@ -49,23 +60,35 @@ After entering your password, you'll be brought to an instance of Visual Studio 
 code editors out there, but it can look a bit intimidating to get into.
 
 First, close out a bit of the clutter. I would X out of the notification at the top complaining about restricted mode
-(if there is one) and the AI chat feature on the right side. AI isn't something that will be used in Folktale, which
-will be expanded on in the next section of this guide.
+(if there is one) and the AI chat feature on the right side. For this, click the button in the very top right of the
+screen, the icon with a smaller rectangle in the right half. AI isn't something that will be used in Folktale, which will be expanded
+on in the next section of this guide.
+
+![](images/15-close-ai.png)
 
 Look in the bottom left corner. You might see a "Restricted Mode" card there. If you click it, it'll open up a window
 where you can trust the folder. You'll need to do this to access needed features.
+
+![](images/14-trust-folder.png)
 
 Also in the bottom left corner you'll find the Hackatime widget. It'll be saying something like "Start coding to track
 your time", then it'll tell you how long you have been coding today. If you don't see this, **your Hackatime isn't
 working properly and your submission may not be valid**. Always make sure the time is tracking, and if it isn't,
 troubleshoot yourself or ask for help in the *#folktale* Slack channel.
 
+![](images/16-hackatime-panel.png)
+
 If you don't like light theme, you can switch to dark. First open the Command Palette (this lets you run special editor
 commands) by either pressing F1 or clicking the three-lines (☰) and going to View > Command Palette. Search "Toggle
 theme" and select the option that reads "Preferences: Toggle between Light/Dark Themes".
 
-At some point, you might get some reconnection errors with the instance. Go back to the Hack Club Spaces dashboard,
-click "Start", and then click "Open".
+![](images/17-open-cmd.png)
+![](images/18-change-theme.png)
+
+At some point, you might get some reconnection errors with the instance popping up on your screen. Go back to the Hack
+Club Spaces dashboard, click "Start", and then click "Open".
+
+![](images/12-start-space.png)
 
 Now, think back to earlier in this section when we were learning about the special software that turns our rules-based
 text into something that a computer can understand. We'll actually set that up now. I'm going to throw a few definitions
@@ -83,14 +106,22 @@ install and use the Python interpreter. To install it:
 
 1. Go to the Extensions tab by clicking the button in the sidebar with four squares but one is rotated, or doing Ctrl +
    Shift + X
+   ![](images/19-extensions-tab.png)
 2. Search "python" and install the Python extension by ms-python
-3. All done! You might see a yellow warning in the bottom right corner saying something like `Select Interpreter`. You
+   ![](images/20-install-python.png)
+3. Click back to the Explorer tab that you started on by clicking the two pieces of paper icon in the sidebar
+   ![](images/21-back-to-explorer.png)
+4. All done! You might see a yellow warning in the bottom right corner saying something like `Select Interpreter`. You
    might be able to ignore this. If not, the path you should enter is `/bin/python3`
 
 We've now set up the Python interpreter. Let's test it out!
 
+![](images/22-new-file.png)
+
 Hover over your project's name in the Explorer tab. There should be a few buttons that pop up. The one furthest on the
 left lets you create a new file, click it. Name your file `game.py`.
+
+![](images/23-rename-file.png)
 
 Let's put some code in there. This will follow Python's rules and correspond to a specific instruction the computer will
 handle. We'll look at this in more detail in the next chapter, so for now, just type out this code to make sure
@@ -100,8 +131,16 @@ everything's working:
 print("Hello, world!")
 ```
 
+For all code snippets in this guide, I would encourage you to type them out yourself rather than copy-pasting. This will
+help you retain the Python code better.
+
+![](images/24-run-file.png)
+
 Visual Studio Code also makes it pretty easy to run the Python interpreter on this bit of code. Click the triangular
 play button in the top right corner, and you should see the words "Hello, world!" be printed out in the window that
-popped up at the bottom of your screen.
+popped up at the bottom of your screen. There will be some other scary looking text, this is the command that the play
+button ran. Just focus on the "Hello World" bit, that's the important one.
+
+![](images/25-helloworld-output.png)
 
 Everything is now set up for you go make your game. Onwards to the next section to find out how to do it!
