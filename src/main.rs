@@ -54,8 +54,21 @@ fn render_guide() -> io::Result<Guide> {
 
         let mut events = Vec::new();
         let mut python: Option<String> = None;
+        let mut images: u32 = 0;
         for event in Parser::new_ext(markdown, options) {
             match event {
+                Event::Start(Tag::Image { .. }) => {
+                    let side = if images % 2 == 0 { "right" } else { "left" };
+                    images += 1;
+                    events.push(Event::Html(
+                        format!("<span class=\"guide-image guide-image-{side}\">").into(),
+                    ));
+                    events.push(event);
+                }
+                Event::End(TagEnd::Image) => {
+                    events.push(event);
+                    events.push(Event::Html("</span>".into()));
+                }
                 Event::Start(Tag::CodeBlock(CodeBlockKind::Fenced(ref lang)))
                     if lang.as_ref() == "python" =>
                 {
@@ -137,16 +150,17 @@ async fn main() -> io::Result<()> {
         .and_then(|p| p.parse().ok())
         .unwrap_or(2000);
 
-    println!("Listening on http://127.0.0.1:{port}");
+    println!("Listening on http://0.0.0.0:{port}");
 
     HttpServer::new(move || {
         App::new()
             .app_data(guide.clone())
             .service(guide_index)
+            .service(Files::new("/guide/images", format!("{GUIDE_DIR}/images")))
             .service(guide_page)
             .service(Files::new("/", UI_DIR).index_file("index.html"))
     })
-    .bind(("127.0.0.1", port))?
+    .bind(("0.0.0.0", port))?
     .run()
     .await
 }
