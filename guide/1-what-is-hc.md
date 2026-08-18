@@ -37,6 +37,4 @@ Here's a quick list of other things that Hack Club offers:
 - Spaces: Free web code and CAD editors
 - Print Legion: Free 3D prints from Hack Clubbers around the world
 
-![](images/hcb-dark.svg)
-
 Hack Club offers a bunch of different things to help you with any type of project you want. Now, let's get you set up with Hack Club!
