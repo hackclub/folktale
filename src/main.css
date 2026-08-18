@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    background-color: #3c2b60;
+    font-family: Arvo, sans-serif;
+    overscroll-behavior-y: none;
+    overflow-x: hidden;
+
+    --separator-top: 64.5vw;
+    --separator-width: 101vw;
+    --separator-left: -0.5vw;
+    --separator-height: calc(var(--separator-width) * 29.23464 / 210.15952);
+    --ground-tile: calc(var(--separator-width) * 200 / 210.15952);
+    --ground-overlap: 2px;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    position: relative;
+    display: flow-root;
+}
+
+#bg_canvas {
+    display: block;
+    image-rendering: pixelated;
+}
+
+.bg_img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#bg_sky {
+    width: 100%;
+    height: 75vw;
+    background: radial-gradient(ellipse at bottom right, #578eb6, #2b7271, #3c2b60);
+    position: absolute;
+    z-index: -3;
+}
+
+#background_tree {
+    z-index: -2;
+}
+
+#logo {
+    position: relative;
+    z-index: -2;
+}
+
+#logo_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#separator {
+    position: absolute;
+    width: var(--separator-width);
+    left: var(--separator-left);
+    top: var(--separator-top);
+    z-index: 0;
+}
+
+#ground {
+    position: absolute;
+    top: calc(var(--separator-top) + var(--separator-height) - var(--ground-overlap));
+    bottom: 0;
+    width: 100%;
+    background-image: url("resources/ground.svg");
+    background-size: var(--ground-tile) var(--ground-tile);
+    background-position: var(--separator-left) calc(var(--ground-overlap) - var(--separator-height));
+    z-index: 0;
+}
+
+#first_block {
+}
+
+.content_block {
+    color: aliceblue;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    position: relative;
+    z-index: 1;
+}
+
+#leaves_container {
+    position: absolute;
+    height: 75vw;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.leaf {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    will-change: transform;
+}
+
+#steps {
+    font-size: xx-large;
+    max-width: 70vw;
+    margin-top: 150px;
+}
+
+.space-taker {
+    flex-grow: 1;
+}
+
+.step-holder {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.step-text {
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.step-arrow {
+    height: 128px;
+    margin: 0;
+    padding: 0;
+}
+
+.flip-x {
+    transform: scaleX(-1);
+}
+
+.faq-holder {
+    --faq-radius: 24px;
+    --faq-inner-radius: 8px;
+}
+
+.faq-entry {
+    margin-top: 16px;
+    background-color: #9e73f3;
+    border-radius: var(--faq-radius);
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #1f1034;
+    width: fit-content;
+    margin: 0;
+    padding: 16px;
+    border-radius: var(--faq-radius) 0 var(--faq-inner-radius) 0;
+}
+
+.faq-answer {
+    padding: 8px;
+}
+
+a {
+    color: #00c8ff;
+}
+
+#guide-button-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+}
+
+#guide-button {
+    padding: 24px;
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    color: aliceblue;
+    background-color: #9e73f3;
+    border-color: #1f1034;
+    border-width: 8px;
+    border-radius: 24px;
+    border-style: solid;
+}
