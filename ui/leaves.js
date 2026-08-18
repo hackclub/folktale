@@ -3,8 +3,9 @@ const leaves_container = document.querySelector("#leaves_container")
 
 let leaves_list = []
 
-const SPAWN_INTERVAL = 800
+const SPAWN_INTERVAL = 500
 const MAX_SIZE = 80
+const MAX_COUNT = 40
 const SPAWN_HEIGHT = -MAX_SIZE
 const INITIAL_LEAVES = 16
 
@@ -17,8 +18,14 @@ function apply_size(leaf) {
 }
 
 function spawn_leaf(y = SPAWN_HEIGHT) {
+    if (leaves_list.length > MAX_COUNT) {
+        return;
+    }
     const element = document.createElement("img")
-    element.className = "leaf"
+    element.className = "leaf leaf-fg"
+    if (Math.random() > 0.5) {
+        element.className = "leaf leaf-bg"
+    }
     element.alt = ""
     element.src = leaves_paths[Math.floor(Math.random() * leaves_paths.length)]
 
@@ -26,7 +33,7 @@ function spawn_leaf(y = SPAWN_HEIGHT) {
         element,
         x_ratio: Math.random(),
         y,
-        size_factor: Math.random(),
+        size_factor: Math.max(Math.sqrt(Math.random()), 0.1),
         time: 0,
         rotation: Math.random() * 360,
         spin: (Math.random() - 0.5) * 60,

@@ -7,7 +7,7 @@ So where do you go from here?
 ## Continuing with Python
 
 This guide only taught the bare minimum amount of Python to get your game done. If you're wanting to learn more, I can
-recommend [w3schools](https://www.w3schools.com/python/default.asp) to learn more syntax.
+recommend [w3schools](https://www.w3schools.com/python/default.asp) to learn more Python syntax.
 
 You'll probably also want to set up a local version of a code editor. You can download Visual Studio Code for your
 desktop, I would recommend that. To set it up with Hackatime, check out its
@@ -29,3 +29,5 @@ Also, Hack Club Slack! One of the strongest predictors of having amazing experie
 into channels for the things you're interested in (trust me, you'll find one), just start chatting.
 
 Hack Club is a magical place. Enjoy yourself.
+
+Happy Hacking!

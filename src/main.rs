@@ -62,6 +62,19 @@ fn render_guide() -> io::Result<Guide> {
                     ));
                     events.push(event);
                 }
+                Event::Start(Tag::Link { ref dest_url, .. }) => {
+                    let href = dest_url
+                        .replace('&', "&amp;")
+                        .replace('"', "&quot;")
+                        .replace('<', "&lt;")
+                        .replace('>', "&gt;");
+                    events.push(Event::Html(
+                        format!(
+                            "<a href=\"{href}\" target=\"_blank\" rel=\"noopener noreferrer\">"
+                        )
+                        .into(),
+                    ));
+                }
                 Event::End(TagEnd::Image) => {
                     events.push(event);
                     events.push(Event::Html("</span>".into()));
