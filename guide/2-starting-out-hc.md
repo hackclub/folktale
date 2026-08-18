@@ -18,7 +18,7 @@ You'll need to enter some personal information, then verify your email. After th
 You'll see a few default channels that you've been added to. You should have also gotten an automated message with what
 the channels mean.
 
-Let's join a channel! We'll join the *#folktale* channel, where you can get help with any part of this guide.
+Let's join a channel! We'll join the *#folktale* channel, chat with others.
 
 At the top of your screen, you'll see a searchbar saying `Search Hack Club`. Click it, then search "folktale". You
 should see a search entry with a big hashtag next to it, that's the channel. Click it, click the big green "Join
@@ -26,8 +26,9 @@ Channel" button at the bottom, and then you're in!
 
 ![](images/5-searching.png)
 
-Say hi, meet some people. Also, please do put any questions that come up into that channel, and an organizer or
-community member will get you an answer as soon as possible.
+Say hi, meet some people. There's also a *#folktale-help* channel that you can join in the same way. If anything at all
+comes up while you're working through the guide, if you get stuck at all, put a message in here and a nice community
+member or Folktale organizer will help you out.
 
 After you're done chatting, you'll need to verify in Hack Club Auth before you can set up a coding environment. Hack
 Club needs to make sure that all prizes go to teenagers, so we ask everyone to verify their identity.

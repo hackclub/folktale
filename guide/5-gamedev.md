@@ -155,7 +155,8 @@ you **tell** it to, which doesn't always match up with what you **want** it to d
 I've left in this example code that might do something a little different than what was intended. See if you can find
 them!
 
-If you get stuck with anything, ask away in the *#folktale* Slack channel.
+If you get stuck with anything, ask away in the *#folktale-help* Slack channel. You can join this the same way as you
+joined `#folktale`.
 
 To re-iterate the AI policy from the FAQ on the homepage, there is to be **zero** generative AI usage for Folktale.
 While these tools can be legitimately helpful, I would *heavily* encourage you avoid them until later in your
