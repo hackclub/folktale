@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Modern+Antiqua&display=swap');
+
+:root {
+    font-family: Afacad, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2b1a4d;
+    color: aliceblue;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    box-sizing: border-box;
+    background-color: #1f1034;
+    border: 1px solid #150a26;
+    z-index: 10;
+}
+
+#progress-bar-fill {
+    height: 100%;
+    background-color: #9e73f3;
+}
+
+#guide-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 32px 32px;
+    font-size: larger;
+    line-height: 1.6;
+}
+
+#guide-nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 32px 64px;
+    font-size: larger;
+}
+
+a {
+    color: #00c8ff;
+}
+
+pre {
+    background-color: #1f1034;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+code {
+    font-size: medium;
+}
+
+.hl-keyword {
+    color: #c792ea;
+}
+
+.hl-constant {
+    color: #f78c6c;
+}
+
+.hl-builtin {
+    color: #82aaff;
+}
+
+.hl-string {
+    color: #a5e075;
+}
+
+.hl-number {
+    color: #f78c6c;
+}
+
+.hl-comment {
+    color: #8f7fb0;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 24px auto;
+    text-align: center;
+}
+
+th, td {
+    padding: 8px 24px;
+}
+
+thead th {
+    border-bottom: 1px solid #9e73f3;
+}
+
+th:not(:last-child), td:not(:last-child) {
+    border-right: 1px solid #9e73f3;
+}
