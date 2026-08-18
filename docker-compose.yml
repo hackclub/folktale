@@ -1,0 +1,5 @@
+services:
+  folktale:
+    build: .
+    ports:
+      - "2000:2000"
