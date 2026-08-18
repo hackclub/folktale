@@ -351,7 +351,7 @@ everything covered so far:
 - `True` and `False` are what's actually happening when we conditionally evaluate something like `x == 3` or `x != 3`
   (`!=` is not equal)
 
-Conditional symbols table
+**Conditional symbols table:**
 
 | Symbol | Meaning               |
 |--------|-----------------------|

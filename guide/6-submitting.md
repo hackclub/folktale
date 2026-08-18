@@ -79,9 +79,9 @@ Write up a quick description of your project. Make sure you commit and sync any 
 ![](images/36-repository.png)
 
 Now, you're ready to submit! You can find the submission page
-at [https://checkbox.hackclub.com/folktale](https://checkbox.hackclub.com/folktale). Sign in with your Hack Club
-account, copy-paste in the repository URL, write up a quick description, mention how you thought this experience went,
-and submit!
+at [https://forms.hackclub.com/folktale](https://forms.hackclub.com/folktale). Note down some information so that we
+know who to send stickers to, copy-paste in the repository URL, write up a quick description, mention how you thought
+this experience went, and submit!
 
 You will receive your stickers in the mail after your project is reviewed. You can check the status of any inbound mail
 at [https://mail.hackclub.com](https://mail.hackclub.com).
