@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/
 COPY --from=builder /app/target/release/folktale /app/folktale
 COPY ui /app/ui
 COPY guide /app/guide
-ENV PORT=8080
-EXPOSE 8080
+ENV PORT=2000
+EXPOSE 2000
 CMD ["./folktale"]
