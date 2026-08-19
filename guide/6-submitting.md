@@ -73,7 +73,8 @@ main page, you can click your profile picture in the top right then Repositories
 On this page, you will see a list of all the files that you pushed. You'll also see underneath the README for the
 repository. It's probably the default VS Code Space one. Let's change it.
 
-You can either go back to VS Code or click the pencil icon right on the GitHub page to edit this, found in README.md.
+Go back to VS Code to edit this, the file is README.md.
+
 Write up a quick description of your project. Make sure you commit and sync any changes.
 
 ![](images/36-repository.png)
