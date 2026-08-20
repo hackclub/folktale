@@ -3,8 +3,8 @@
 :root {
     background-color: #3c2b60;
     font-family: Arvo, sans-serif;
-    overscroll-behavior-y: none;
-    overflow-x: hidden;
+    overscroll-behavior: none;
+    overflow-x: clip;
 
     --separator-top: 64.5vw;
     --separator-left: -0.5vw;
@@ -16,9 +16,11 @@
 
 body {
     width: 100%;
+    max-width: 100%;
     margin: 0;
     position: relative;
     display: flow-root;
+    overflow-x: clip;
 }
 
 #bg_canvas {
@@ -28,6 +30,7 @@ body {
 
 .bg_img {
     width: 100%;
+    height: auto;
     position: absolute;
     top: 0;
 }
@@ -57,6 +60,7 @@ body {
 
 #logo {
     max-width: 50vw;
+    height: auto;
     padding-left: 15vw;
     filter: drop-shadow(0 4px 10px #1f1034);
 }
@@ -94,7 +98,7 @@ body {
 #leaves_container {
     position: absolute;
     height: 75vw;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -164,6 +168,7 @@ body {
     width: fit-content;
     margin: 0;
     padding: 16px;
+    font-size: 2em;
     border-radius: var(--faq-radius) 0 var(--faq-inner-radius) 0;
 }
 
@@ -220,7 +225,45 @@ footer {
     width: fit-content;
     margin: 0;
     padding: 16px;
+    font-size: 2em;
     border-radius: var(--ref-radius) 0 var(--ref-inner-radius) 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    #steps {
+        font-size: large;
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .step-arrow {
+        height: 48px;
+    }
+
+    #first_block h1 {
+        font-size: xx-large !important;
+    }
+
+    .faq-question,
+    .ref-title {
+        font-size: 1.25em;
+    }
+
+    #guide-button {
+        padding: 16px;
+        font-size: 28px;
+    }
 }
 
 .ref-entry p {

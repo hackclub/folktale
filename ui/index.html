@@ -2,8 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Folktale by Hack Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Folktale by Hack Club — Learn Python, Make a Game, Get Stickers</title>
+    <meta name="description"
+          content="Hack Club Folktale is a free program for teens 13–18: learn Python from scratch, ship your own branching story game, and get a custom sticker sheet.">
+    <link rel="canonical" href="https://folktale.hackclub.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#3c2b60">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hack Club Folktale">
+    <meta property="og:url" content="https://folktale.hackclub.com/">
+    <meta property="og:title" content="Folktale by Hack Club — Learn Python, Make a Game, Get Stickers">
+    <meta property="og:description"
+          content="A free program for teens 13–18: learn Python from scratch, ship your own branching story game, and get a custom sticker sheet.">
+    <meta property="og:image" content="https://folktale.hackclub.com/resources/folktale_logo.webp">
+    <meta property="og:image:alt" content="The Hack Club Folktale logo">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Folktale by Hack Club — Learn Python, Make a Game, Get Stickers">
+    <meta name="twitter:description"
+          content="A free program for teens 13–18: learn Python from scratch, ship your own branching story game, and get a custom sticker sheet.">
+    <meta name="twitter:image" content="https://folktale.hackclub.com/resources/folktale_logo.webp">
+
     <link rel="icon" type="image/png" href="resources/leave_2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="index.css">
     <script src="leaves_bg.js" defer></script>
 
@@ -18,6 +43,92 @@
         plausible.init()
     </script>
 
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://hackclub.com/#organization",
+                    "name": "Hack Club",
+                    "url": "https://hackclub.com/",
+                    "nonprofitStatus": "Nonprofit501c3"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://folktale.hackclub.com/#website",
+                    "url": "https://folktale.hackclub.com/",
+                    "name": "Hack Club Folktale",
+                    "description": "A free program for teens 13–18: learn Python from scratch, ship your own branching story game, and get a custom sticker sheet.",
+                    "inLanguage": "en",
+                    "publisher": {"@id": "https://hackclub.com/#organization"}
+                },
+                {
+                    "@type": "Course",
+                    "@id": "https://folktale.hackclub.com/#course",
+                    "name": "Hack Club Folktale",
+                    "url": "https://folktale.hackclub.com/",
+                    "description": "A beginner-focused guide that walks teens through joining Hack Club, learning Python, and shipping a branching story game for a free sticker sheet.",
+                    "inLanguage": "en",
+                    "isAccessibleForFree": true,
+                    "educationalLevel": "Beginner",
+                    "typicalAgeRange": "13-18",
+                    "teaches": ["Python programming", "Text-based game development", "Git and GitHub"],
+                    "provider": {"@id": "https://hackclub.com/#organization"},
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "category": "Free",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    "hasCourseInstance": {
+                        "@type": "CourseInstance",
+                        "courseMode": "Online"
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "https://folktale.hackclub.com/#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "Who is this for?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Anyone 13 through 18 years old inclusive who wants to get into the magical art of programming!"
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Is this really free?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yup! This is run through Hack Club, a 501(c) nonprofit whose mission is to spread programming awareness as far as possible."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "What is the AI policy for Hack Club Folktale?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Since this is a specifically beginner-focused program, we ask that you refrain from all AI usage, as it robs the productive struggle that is learning."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "I have more questions!",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Check out the guide! It is written from the ground up for how to get into Hack Club, how to code in Python, and how to submit your project for prizes."
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
 </head>
 <body>
 <a href="https://hackclub.com/"><img
@@ -26,27 +137,30 @@
 
 <div id="bg_sky"></div>
 
-<img id="background_tree" class="bg_img" alt="left background tree image" src="resources/background_tree1.png"/>
+<img id="background_tree" class="bg_img" alt="" aria-hidden="true" width="3200" height="2400"
+     src="resources/background_tree1.png"/>
 
-<div id="leaves_container"></div>
+<div id="leaves_container" aria-hidden="true"></div>
 
-<img class="bg_img" alt="right background tree image" src="resources/foreground_tree2.png"/>
+<img class="bg_img" alt="" aria-hidden="true" width="3200" height="2400" src="resources/foreground_tree2.png"/>
 
 <div style="height: 80vw"></div>
 
 <div id="logo-container">
-    <img id="logo" alt="Hack Club Folktale" src="resources/folktale_logo.webp"></img>
+    <img id="logo" alt="Hack Club Folktale" width="4119" height="2274" fetchpriority="high"
+         src="resources/folktale_logo.webp">
 </div>
 
-<img id="separator" alt="separator" src="resources/separator.svg"/>
+<img id="separator" alt="" aria-hidden="true" src="resources/separator.svg"/>
 
 <div id="ground"></div>
 
-<div class="content_block" id="first_block">
+<main class="content_block" id="first_block">
     <h1 style="font-size: xxx-large; padding-bottom: 0; margin-bottom: 0;">Welcome to <span style="color: #9e73f3">Hack Club Folktale</span>
     </h1>
     <p style="font-size: x-large; padding-top: 0">Learn to make a simple little game in Python, get a free sticker
         sheet!</p>
+    <h2 class="visually-hidden">How Hack Club Folktale works</h2>
     <div id="steps">
         <div class="step-holder">
             <p class="step-text">
@@ -55,7 +169,7 @@
         </div>
         <div class="step-holder">
             <div class="space-taker"></div>
-            <img class="step-arrow flip-x" src="resources/arrow.svg" alt="arrow"/>
+            <img class="step-arrow flip-x" src="resources/arrow.svg" alt="" aria-hidden="true" loading="lazy"/>
             <p class="step-text">
                 Learn Python through the guide
             </p>
@@ -64,36 +178,37 @@
             <p class="step-text">
                 Ship a branching story game, with guidance of course
             </p>
-            <img class="step-arrow" src="resources/arrow.svg" alt="arrow"/>
+            <img class="step-arrow" src="resources/arrow.svg" alt="" aria-hidden="true" loading="lazy"/>
             <div class="space-taker"></div>
         </div>
         <div class="step-holder">
             <div class="space-taker"></div>
-            <img class="step-arrow flip-x" src="resources/arrow.svg" alt="arrow"/>
+            <img class="step-arrow flip-x" src="resources/arrow.svg" alt="" aria-hidden="true" loading="lazy"/>
             <p class="step-text">
                 Get a custom sheet of stickers!
             </p>
         </div>
     </div>
     <div style="height: 60px"></div>
+    <h2 class="visually-hidden">Frequently asked questions</h2>
     <div class="faq-holder">
         <div class="faq-entry">
-            <h1 class="faq-question">Who is this for?</h1>
+            <h3 class="faq-question">Who is this for?</h3>
             <p class="faq-answer">Anyone 13 through 18 years old inclusive who wants to get into the magical art of
                 programming!</p>
         </div>
         <div class="faq-entry">
-            <h1 class="faq-question">Is this really free?</h1>
+            <h3 class="faq-question">Is this really free?</h3>
             <p class="faq-answer">Yup! This is run through <a href="https://hackclub.com/">Hack Club</a>, a 501(c)
                 nonprofit whose mission is to spread programming awareness as far as possible.</p>
         </div>
         <div class="faq-entry">
-            <h1 class="faq-question">What is the AI policy for Hack Club Folktale?</h1>
+            <h3 class="faq-question">What is the AI policy for Hack Club Folktale?</h3>
             <p class="faq-answer">Since this is a specifically beginner-focused program, we ask that you refrain from
                 all AI usage, as it robs the productive struggle that is learning.</p>
         </div>
         <div class="faq-entry">
-            <h1 class="faq-question">I have more questions!</h1>
+            <h3 class="faq-question">I have more questions!</h3>
             <p class="faq-answer">Check out the guide! It is written from the ground up for how to get into Hack Club,
                 how to code in Python, and how to submit your project for prizes.</p>
         </div>
@@ -109,7 +224,7 @@
 
     <div class="ref-holder">
         <div class="ref-entry" id="referral-block">
-            <h1 class="ref-title">Referral Bonuses</h1>
+            <h2 class="ref-title">Referral Bonuses</h2>
             <div class="ref-content">
                 <p>Want some <span style="color: #9e73f3">exclusive, custom stickers</span>? Refer a friend to or make
                     content about Hack Club Folktale!
@@ -139,7 +254,7 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <div style="height: 20vh"></div>
 
