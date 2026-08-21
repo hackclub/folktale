@@ -5,7 +5,7 @@ use std::io;
 use actix_files::Files;
 use actix_web::middleware::DefaultHeaders;
 use actix_web::{App, HttpResponse, HttpServer, Responder, get, http::header, routes, web};
-use pulldown_cmark::{CodeBlockKind, Event, Options, Parser, Tag, TagEnd, html};
+use pulldown_cmark::{CodeBlockKind, Event, HeadingLevel, Options, Parser, Tag, TagEnd, html};
 
 mod highlight;
 
@@ -17,6 +17,7 @@ const PAGES: u32 = 7;
 const PLACEHOLDER: &str = "{GUIDE}";
 const PROGRESS_PLACEHOLDER: &str = "{PROGRESSBAR}";
 const NAV_PLACEHOLDER: &str = "{NAV}";
+const NAVIGATOR_PLACEHOLDER: &str = "{NAVIGATOR}";
 
 struct Guide {
     pages: HashMap<u32, String>,
@@ -43,6 +44,40 @@ fn render_guide() -> io::Result<Guide> {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
     options.insert(Options::ENABLE_TABLES);
+
+    let mut navigator = String::from("<nav id=\"guide-navigator\">");
+    for number in 1..=PAGES {
+        let mut title = format!("Page {number}");
+        if let Some(markdown) = sources.get(&number) {
+            let mut parser = Parser::new_ext(markdown, options);
+            while let Some(event) = parser.next() {
+                if matches!(
+                    event,
+                    Event::Start(Tag::Heading {
+                        level: HeadingLevel::H1,
+                        ..
+                    })
+                ) {
+                    let mut text = String::new();
+                    for event in parser.by_ref() {
+                        match event {
+                            Event::Text(t) | Event::Code(t) => text.push_str(&t),
+                            Event::End(TagEnd::Heading(_)) => break,
+                            _ => {}
+                        }
+                    }
+                    title = text;
+                    break;
+                }
+            }
+        }
+        let title = title
+            .replace('&', "&amp;")
+            .replace('<', "&lt;")
+            .replace('>', "&gt;");
+        navigator.push_str(&format!("<a href=\"/guide/{number}\">{title}</a>"));
+    }
+    navigator.push_str("</nav>");
 
     let mut pages = HashMap::new();
     for number in 1..=PAGES {
@@ -127,7 +162,8 @@ fn render_guide() -> io::Result<Guide> {
             template
                 .replace(PLACEHOLDER, &body)
                 .replace(PROGRESS_PLACEHOLDER, &progress_bar)
-                .replace(NAV_PLACEHOLDER, &nav),
+                .replace(NAV_PLACEHOLDER, &nav)
+                .replace(NAVIGATOR_PLACEHOLDER, &navigator),
         );
     }
 
