@@ -3,6 +3,7 @@ use std::fs;
 use std::io;
 
 use actix_files::Files;
+use actix_web::middleware::DefaultHeaders;
 use actix_web::{App, HttpResponse, HttpServer, Responder, get, http::header, routes, web};
 use pulldown_cmark::{CodeBlockKind, Event, Options, Parser, Tag, TagEnd, html};
 
@@ -169,6 +170,12 @@ async fn main() -> io::Result<()> {
             .service(Files::new("/guide/images", format!("{GUIDE_DIR}/images")))
             .service(guide_page)
             .service(Files::new("/", UI_DIR).index_file("index.html"))
+            .wrap(
+                DefaultHeaders::new()
+                    .add((header::CROSS_ORIGIN_OPENER_POLICY, "same-origin"))
+                    .add((header::CROSS_ORIGIN_EMBEDDER_POLICY, "require-corp"))
+                    .add((header::X_CONTENT_TYPE_OPTIONS, "nosniff")),
+            )
     })
     .bind(("0.0.0.0", port))?
     .run()
