@@ -84,6 +84,8 @@ at [https://submit.hackclub.com/folktale](https://submit.hackclub.com/folktale).
 know who to send stickers to, copy-paste in the repository URL, write up a quick description, mention how you thought
 this experience went, and submit!
 
+Hack Club has an app called Pyterm that can be used to share your project with your friends. Use the link `https://pyterm.hackclub.com/USER/REPO`, where `USER` is your GitHub username and `REPO` is the name that you gave the repository.
+
 You will receive your stickers in the mail after your project is reviewed. You can check the status of any inbound mail
 at [https://mail.hackclub.com](https://mail.hackclub.com).
 
