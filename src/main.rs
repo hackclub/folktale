@@ -45,7 +45,7 @@ fn render_guide() -> io::Result<Guide> {
     options.insert(Options::ENABLE_STRIKETHROUGH);
     options.insert(Options::ENABLE_TABLES);
 
-    let mut navigator = String::from("<nav id=\"guide-navigator\">");
+    let mut titles: Vec<(u32, String)> = Vec::new();
     for number in 1..=PAGES {
         let mut title = format!("Page {number}");
         if let Some(markdown) = sources.get(&number) {
@@ -75,9 +75,8 @@ fn render_guide() -> io::Result<Guide> {
             .replace('&', "&amp;")
             .replace('<', "&lt;")
             .replace('>', "&gt;");
-        navigator.push_str(&format!("<a href=\"/guide/{number}\">{title}</a>"));
+        titles.push((number, title));
     }
-    navigator.push_str("</nav>");
 
     let mut pages = HashMap::new();
     for number in 1..=PAGES {
@@ -156,6 +155,17 @@ fn render_guide() -> io::Result<Guide> {
             String::from("<span></span>")
         };
         let nav = format!("<nav id=\"guide-nav\">{previous}{next}</nav>");
+
+        let mut navigator = String::from("<nav id=\"guide-navigator\">");
+        for (page, title) in &titles {
+            let class = if *page == number {
+                " class=\"current\""
+            } else {
+                ""
+            };
+            navigator.push_str(&format!("<a href=\"/guide/{page}\"{class}>{title}</a>"));
+        }
+        navigator.push_str("</nav>");
 
         pages.insert(
             number,

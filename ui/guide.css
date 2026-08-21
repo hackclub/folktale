@@ -156,8 +156,12 @@ footer {
     transition: color 0.15s;
 }
 
+#guide-navigator a.current {
+    color: #cea3f3;
+}
+
 #guide-navigator a:hover {
-    color: #8ecfff;
+    color: #be93f3;
 }
 
 @media (max-width: 1340px) {
