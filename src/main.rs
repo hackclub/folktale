@@ -13,6 +13,7 @@ use highlight::highlight_python;
 
 const UI_DIR: &str = "ui";
 const GUIDE_DIR: &str = "guide";
+const TEMPLATE_DIR: &str = "templates";
 const PAGES: u32 = 7;
 const PLACEHOLDER: &str = "{GUIDE}";
 const PROGRESS_PLACEHOLDER: &str = "{PROGRESSBAR}";
@@ -24,7 +25,7 @@ struct Guide {
 }
 
 fn render_guide() -> io::Result<Guide> {
-    let template = fs::read_to_string(format!("{UI_DIR}/guide.html"))?;
+    let template = fs::read_to_string(format!("{TEMPLATE_DIR}/guide.html"))?;
 
     let mut sources: HashMap<u32, String> = HashMap::new();
     for entry in fs::read_dir(GUIDE_DIR)? {
@@ -180,6 +181,13 @@ fn render_guide() -> io::Result<Guide> {
     Ok(Guide { pages })
 }
 
+#[get("/guide.html")]
+async fn guide_html_redirect() -> impl Responder {
+    HttpResponse::MovedPermanently()
+        .insert_header((header::LOCATION, "/guide/1"))
+        .finish()
+}
+
 #[routes]
 #[get("/guide")]
 #[get("/guide/")]
@@ -212,6 +220,7 @@ async fn main() -> io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(guide.clone())
+            .service(guide_html_redirect)
             .service(guide_index)
             .service(Files::new("/guide/images", format!("{GUIDE_DIR}/images")))
             .service(guide_page)
