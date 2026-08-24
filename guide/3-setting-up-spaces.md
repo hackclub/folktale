@@ -74,7 +74,7 @@ where you can trust the folder. You'll need to do this to access needed features
 Also in the bottom left corner you'll find the Hackatime widget. It'll be saying something like "Start coding to track
 your time", then it'll tell you how long you have been coding today. If you don't see this, **your Hackatime isn't
 working properly and your submission may not be valid**. Always make sure the time is tracking, and if it isn't,
-troubleshoot yourself or ask for help in the *#folktale* Slack channel.
+troubleshoot yourself or ask for help in the _#folktale_ Slack channel.
 
 ![](images/16-hackatime-panel.png)
 
@@ -112,9 +112,12 @@ install and use the Python interpreter. To install it:
 3. Click back to the Explorer tab that you started on by clicking the two pieces of paper icon in the sidebar
    ![](images/21-back-to-explorer.png)
 4. All done! You might see a yellow warning in the bottom right corner saying something like `Select Interpreter`. You
-   might be able to ignore this. If not, the path you should enter is `/bin/python3`. There have been reports that this
-   sometimes doesn't work. Try restarting the Spaces instance, and you can also try entering `/usr/bin/python3` into the
-   paths field. If all else fails, shoot a message in *#folktale-help* and we'll be right with you!
+   might be able to ignore this. If not, the path you should enter is `/bin/python3`.
+
+**If Step 4 Fails**
+For some people, step 4 has not been working and Python has not be available. If this happens, first try stopping then
+restarting the Space. If this doesn't work, then that means that for whatever reason, your Space failed to install Python
+when it was created. The only solution at the moment is unfortunately to make a brand new Space following the same steps.
 
 We've now set up the Python interpreter. Let's test it out!
 
