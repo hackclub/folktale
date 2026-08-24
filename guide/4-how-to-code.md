@@ -297,7 +297,7 @@ them in terms of making those statements go, but what actually happens under the
 
 ```python
 if 4 == 4:
-    print("This will always run")
+	print("This will always run")
 if True:
 	print("This will always run")
 while False:
@@ -328,8 +328,8 @@ while loop_running:
 	counter = counter + 1
 	
 	if counter >= 10:
-        # This will cause the loop to exit next time it runs through
-        loop_running = False
+		# This will cause the loop to exit next time it runs through
+		loop_running = False
 ```
 
 With that, you now know everything that you need to get started on a branching story game! Here's a quick recap of

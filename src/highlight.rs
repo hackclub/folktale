@@ -88,7 +88,7 @@ pub fn highlight_python(code: &str) -> String {
         }
     }
 
-    out
+    out.replace("\t", "  ")
 }
 
 fn push_span(out: &mut String, class: &str, chars: &[char]) {
