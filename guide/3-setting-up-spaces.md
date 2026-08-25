@@ -115,6 +115,7 @@ install and use the Python interpreter. To install it:
    might be able to ignore this. If not, the path you should enter is `/bin/python3`.
 
 **If Step 4 Fails**
+
 For some people, step 4 has not been working and Python has not be available. If this happens, first try stopping then
 restarting the Space. If this doesn't work, then that means that for whatever reason, your Space failed to install Python
 when it was created. The only solution at the moment is unfortunately to make a brand new Space following the same steps.
