@@ -1,8 +1,8 @@
-# Making a Branching Story Game
+# Making a Text Adventure Game
 
 This section is structured a little differently from the rest. The past sections of the guide have been basically a list
 of instructions to follow. This page though, will be more of a story. I will walk through my thought process in making a
-branching story game, complete with code examples. Based on the snippets here, I'm super excited to see what you can
+adventure game, complete with code examples. Based on the snippets here, I'm super excited to see what you can
 come up with!
 
 You should probably get rid of any example code you've typed out to this point. Unless you want to keep it in your game,
@@ -120,7 +120,7 @@ The word puzzle is pretty similar to the math one, except the response is open e
 	elif room == "word":
 		print("You see in front of you the following puzzle:")
 		print("Descramble the name of an animal: cnorcoa")
-		
+
 		answer = input("Type out your answer: ").lower()
 
 		if answer == "raccoon":
@@ -150,16 +150,16 @@ If you get any of the Python code rules wrong, the editor will sometimes underli
 you an error when you try to run it.
 
 Not all errors are from not following the rules, though. Sometimes the computer has no problem running the code, but
-what it does isn't what you're intending. These can be nasty to track down, because a computer will do *exactly* what
+what it does isn't what you're intending. These can be nasty to track down, because a computer will do _exactly_ what
 you **tell** it to, which doesn't always match up with what you **want** it to do. There's a few errors like this that
 I've left in this example code that might do something a little different than what was intended. See if you can find
 them!
 
-If you get stuck with anything, ask away in the *#folktale-help* Slack channel. You can join this the same way as you
+If you get stuck with anything, ask away in the _#folktale-help_ Slack channel. You can join this the same way as you
 joined `#folktale`.
 
 To re-iterate the AI policy from the FAQ on the homepage, there is to be **zero** generative AI usage for Folktale.
-While these tools can be legitimately helpful, I would *heavily* encourage you avoid them until later in your
+While these tools can be legitimately helpful, I would _heavily_ encourage you avoid them until later in your
 programming journey. Productive struggle is the root of learning, and AI tools rob the teachings that let you use these
 tools effectively.
 
@@ -171,6 +171,14 @@ Hack Club is a nonprofit that relies on donations in order to give out prizes to
 such, we have to verify that all hours are well substantiated. Please don't try to game the system by inflating your
 time through a rock on the keyboard or something. We'll catch it through our fraud tools, have to go through a process,
 and it won't end well for anyone.
+
+If you're having trouble coming up with ideas, here's a few you could try:
+
+- A medieval dungeon crawler game (like this example!)
+- A quiz/trivia game
+- A guess-the-number game (you'll need to generate some random numbers for this. Google is your friend!)
+- Adapt a physical game into the terminal. Maybe Chopsticks, or Blackjack, or something else entirely.
+- A typing test/game
 
 With that out of the way, I'm really excited to see what you create!
 

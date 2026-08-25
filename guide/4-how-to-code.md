@@ -4,7 +4,7 @@ Computers like following instructions. As such, this is the way programming lang
 of instructions.
 
 In Python, each new line is a new instruction. We'll look at a few of these instructions; the ones that are needed to
-make your branching story game.
+make your text adventure game.
 
 Let's break down the code that you typed out in the last section.
 
@@ -52,7 +52,7 @@ In Python, `+` adds numbers, `-` subtracts them, `*` (not `x`) multiplies, and `
 The second one treats the two as text instead of numbers, "adds" them by sticking one on the end of the other, and will
 print out `12`.
 
-So we've learned a fair bit about printing this out for the user, but to make a branching story game, you'll need to be
+So we've learned a fair bit about printing this out for the user, but to make a text adventure game, you'll need to be
 able to ask the user for input. We use another function for this, fittingly named the `input` function.
 
 For a simple example, let's print out a simple greeting for the user.
@@ -126,7 +126,7 @@ answer = input("What's your name? ")
 print("Hello, " + answer + "!")
 ```
 
-Try it out, run it! With variables, we've got almost all the tools that we need to make a branching story game. There's
+Try it out, run it! With variables, we've got almost all the tools that we need to make a text adventure game. There's
 just one more thing we need: conditional logic.
 
 We'll add on one more thing to this code - printing out whether or not the first letter of the name is a vowel.
@@ -332,7 +332,7 @@ while loop_running:
 		loop_running = False
 ```
 
-With that, you now know everything that you need to get started on a branching story game! Here's a quick recap of
+With that, you now know everything that you need to get started on a text adventure game! Here's a quick recap of
 everything covered so far:
 
 - The `print` function will output text to the user

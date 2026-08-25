@@ -94,7 +94,7 @@ Now, think back to earlier in this section when we were learning about the speci
 text into something that a computer can understand. We'll actually set that up now. I'm going to throw a few definitions
 at you:
 
-- **Python**: This is the programming language that we will be using to make our branching story game. Programming
+- **Python**: This is the programming language that we will be using to make our text adventure game. Programming
   languages are the rules that our text has to be able to follow in order for a computer to be able to understand it.
   Python is known to be one of the easier programming languages to pick up because its rules are more forgiving.
 - **Python code**: Text that follows Python's rules, so it can be turned into something a computer can understand.
