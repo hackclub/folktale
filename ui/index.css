@@ -285,3 +285,78 @@ footer {
 .ref-content {
     padding: 16px;
 }
+
+#sticker-zone {
+    position: relative;
+}
+
+.scatter-sticker {
+    position: absolute;
+    z-index: -1;
+    width: clamp(90px, 13vw, 190px);
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    filter: drop-shadow(0 6px 12px #1f103480);
+}
+
+.sticker-1 {
+    top: 1%;
+    left: -6vw;
+    transform: rotate(-16deg);
+}
+
+.sticker-2 {
+    top: 12%;
+    right: -7vw;
+    transform: rotate(13deg);
+}
+
+.sticker-3 {
+    top: 27%;
+    left: -7vw;
+    transform: rotate(22deg);
+}
+
+.sticker-4 {
+    top: 41%;
+    right: -5vw;
+    transform: rotate(-20deg);
+}
+
+.sticker-5 {
+    top: 55%;
+    left: -6vw;
+    transform: rotate(9deg);
+}
+
+.sticker-6 {
+    top: 70%;
+    right: -7vw;
+    transform: rotate(-13deg);
+}
+
+.sticker-7 {
+    top: 86%;
+    left: -5vw;
+    transform: rotate(18deg);
+}
+
+@media (max-width: 768px) {
+    .scatter-sticker {
+        width: clamp(64px, 20vw, 120px);
+    }
+
+    .sticker-1,
+    .sticker-3,
+    .sticker-5,
+    .sticker-7 {
+        left: -9vw;
+    }
+
+    .sticker-2,
+    .sticker-4,
+    .sticker-6 {
+        right: -9vw;
+    }
+}
