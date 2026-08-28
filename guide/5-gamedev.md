@@ -144,7 +144,9 @@ I did this by adding the following to the end of the while loop:
 Remember to get the amount of indentation right!
 
 And there's the example. Now, it's up to you. Build your own game of this style, submit it, get yourself a sticker
-sheet! Please read down to the bottom of this page first, though.
+sheet! Please don't just copy the code example above, make it your own! 
+
+Please read down to the bottom of this page first, though.
 
 If you get any of the Python code rules wrong, the editor will sometimes underline it in red, and sometimes it'll give
 you an error when you try to run it.
@@ -174,7 +176,7 @@ and it won't end well for anyone.
 
 If you're having trouble coming up with ideas, here's a few you could try:
 
-- A medieval dungeon crawler game (like this example!)
+- A medieval dungeon crawler game (like this example! (but also don't copy it exactly))
 - A quiz/trivia game
 - A guess-the-number game (you'll need to generate some random numbers for this. Google is your friend!)
 - Adapt a physical game into the terminal. Maybe Chopsticks, or Blackjack, or something else entirely.
