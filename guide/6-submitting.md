@@ -89,4 +89,6 @@ Hack Club has an app called Pyterm that can be used to share your project with y
 You will receive your stickers in the mail after your project is reviewed. You can check the status of any inbound mail
 at [https://mail.hackclub.com](https://mail.hackclub.com).
 
+Hack Club does **not** pay any customs fees or duties charged in order to receive the sticker sheet.
+
 Thank you for participating in Folktale! There's one more manual page about where you can go from here.
