@@ -22,6 +22,7 @@ const NAVIGATOR_PLACEHOLDER: &str = "{NAVIGATOR}";
 
 struct Guide {
     pages: HashMap<u32, String>,
+    clubs: String,
 }
 
 fn render_guide() -> io::Result<Guide> {
@@ -88,57 +89,7 @@ fn render_guide() -> io::Result<Guide> {
             )
         })?;
 
-        let mut events = Vec::new();
-        let mut python: Option<String> = None;
-        for event in Parser::new_ext(markdown, options) {
-            match event {
-                Event::Start(Tag::Image { .. }) => {
-                    events.push(Event::Html(
-                        "<span class=\"guide-image\">".to_string().into(),
-                    ));
-                    events.push(event);
-                }
-                Event::Start(Tag::Link { ref dest_url, .. }) => {
-                    let href = dest_url
-                        .replace('&', "&amp;")
-                        .replace('"', "&quot;")
-                        .replace('<', "&lt;")
-                        .replace('>', "&gt;");
-                    events.push(Event::Html(
-                        format!(
-                            "<a href=\"{href}\" target=\"_blank\" rel=\"noopener noreferrer\">"
-                        )
-                        .into(),
-                    ));
-                }
-                Event::End(TagEnd::Image) => {
-                    events.push(event);
-                    events.push(Event::Html("</span>".into()));
-                }
-                Event::Start(Tag::CodeBlock(CodeBlockKind::Fenced(ref lang)))
-                    if lang.as_ref() == "python" =>
-                {
-                    python = Some(String::new());
-                }
-                Event::Text(ref text) if python.is_some() => {
-                    python.as_mut().expect("python block open").push_str(text);
-                }
-                Event::End(TagEnd::CodeBlock) if python.is_some() => {
-                    let code = python.take().expect("python block open");
-                    events.push(Event::Html(
-                        format!(
-                            "<pre><code class=\"language-python\">{}</code></pre>",
-                            highlight_python(&code)
-                        )
-                        .into(),
-                    ));
-                }
-                other => events.push(other),
-            }
-        }
-
-        let mut body = String::new();
-        html::push_html(&mut body, events.into_iter());
+        let body = render_markdown(markdown, options);
 
         let progress = f64::from(number) / f64::from(PAGES) * 100.0;
         let progress_bar = format!(
@@ -178,7 +129,67 @@ fn render_guide() -> io::Result<Guide> {
         );
     }
 
-    Ok(Guide { pages })
+    let clubs_markdown = fs::read_to_string(format!("{GUIDE_DIR}/special-clubs.md"))?;
+    let clubs = template
+        .replace(PLACEHOLDER, &render_markdown(&clubs_markdown, options))
+        .replace(PROGRESS_PLACEHOLDER, "")
+        .replace(NAV_PLACEHOLDER, "")
+        .replace(NAVIGATOR_PLACEHOLDER, "");
+
+    Ok(Guide { pages, clubs })
+}
+
+fn render_markdown(markdown: &str, options: Options) -> String {
+    let mut events = Vec::new();
+    let mut python: Option<String> = None;
+    for event in Parser::new_ext(markdown, options) {
+        match event {
+            Event::Start(Tag::Image { .. }) => {
+                events.push(Event::Html(
+                    "<span class=\"guide-image\">".to_string().into(),
+                ));
+                events.push(event);
+            }
+            Event::Start(Tag::Link { ref dest_url, .. }) => {
+                let href = dest_url
+                    .replace('&', "&amp;")
+                    .replace('"', "&quot;")
+                    .replace('<', "&lt;")
+                    .replace('>', "&gt;");
+                events.push(Event::Html(
+                    format!("<a href=\"{href}\" target=\"_blank\" rel=\"noopener noreferrer\">")
+                        .into(),
+                ));
+            }
+            Event::End(TagEnd::Image) => {
+                events.push(event);
+                events.push(Event::Html("</span>".into()));
+            }
+            Event::Start(Tag::CodeBlock(CodeBlockKind::Fenced(ref lang)))
+                if lang.as_ref() == "python" =>
+            {
+                python = Some(String::new());
+            }
+            Event::Text(ref text) if python.is_some() => {
+                python.as_mut().expect("python block open").push_str(text);
+            }
+            Event::End(TagEnd::CodeBlock) if python.is_some() => {
+                let code = python.take().expect("python block open");
+                events.push(Event::Html(
+                    format!(
+                        "<pre><code class=\"language-python\">{}</code></pre>",
+                        highlight_python(&code)
+                    )
+                    .into(),
+                ));
+            }
+            other => events.push(other),
+        }
+    }
+
+    let mut body = String::new();
+    html::push_html(&mut body, events.into_iter());
+    body
 }
 
 #[get("/guide.html")]
@@ -195,6 +206,13 @@ async fn guide_index() -> impl Responder {
     HttpResponse::Found()
         .insert_header((header::LOCATION, "/guide/1"))
         .finish()
+}
+
+#[get("/guide/clubs")]
+async fn guide_clubs(guide: web::Data<Guide>) -> impl Responder {
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(guide.clubs.clone())
 }
 
 #[get("/guide/{page}")]
@@ -223,6 +241,7 @@ async fn main() -> io::Result<()> {
             .service(guide_html_redirect)
             .service(guide_index)
             .service(Files::new("/guide/images", format!("{GUIDE_DIR}/images")))
+            .service(guide_clubs)
             .service(guide_page)
             .service(Files::new("/", UI_DIR).index_file("index.html"))
             .wrap(
@@ -235,4 +254,52 @@ async fn main() -> io::Result<()> {
     .bind(("0.0.0.0", port))?
     .run()
     .await
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use actix_web::test;
+
+    #[actix_web::test]
+    async fn clubs_and_numbered_guides_are_served() {
+        let app = test::init_service(
+            App::new()
+                .app_data(web::Data::new(render_guide().expect("guides render")))
+                .service(guide_clubs)
+                .service(guide_page),
+        )
+        .await;
+
+        let request = test::TestRequest::get().uri("/guide/clubs").to_request();
+        let response = test::call_service(&app, request).await;
+        assert_eq!(response.status(), 200);
+        assert_eq!(
+            response.headers().get(header::CONTENT_TYPE).unwrap(),
+            "text/html; charset=utf-8"
+        );
+        let body = test::read_body(response).await;
+        let body = std::str::from_utf8(&body).unwrap();
+        assert!(body.contains("<h1>Differences for Clubs</h1>"));
+        assert!(body.contains("href=\"/guide.css\""));
+        for placeholder in [
+            PLACEHOLDER,
+            PROGRESS_PLACEHOLDER,
+            NAV_PLACEHOLDER,
+            NAVIGATOR_PLACEHOLDER,
+        ] {
+            assert!(!body.contains(placeholder));
+        }
+        assert!(!body.contains("id=\"progress-bar\""));
+
+        for page in 1..=PAGES {
+            let request = test::TestRequest::get()
+                .uri(&format!("/guide/{page}"))
+                .to_request();
+            let response = test::call_service(&app, request).await;
+            assert_eq!(response.status(), 200);
+        }
+        let request = test::TestRequest::get().uri("/guide/8").to_request();
+        assert_eq!(test::call_service(&app, request).await.status(), 404);
+    }
 }

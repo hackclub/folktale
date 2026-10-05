@@ -12,7 +12,7 @@ Hack Club is a global nonprofit organization with the goal of getting teenagers 
 
 Hack Club supports coding clubs around the world. We call them Hack Clubs. They're totally student-run, but we offer workshops to follow, stickers and posters for advertisement, events to join, prizes to work for, and more! Check out if there's one at your school, and maybe consider starting one when you have enough confidence with all of this coding stuff.
 
-If you're coming from Clubs, hi! Look forward to introducing you to all of the other things that Hack Club offers.
+> **Note for Clubs** If you are doing Folktale as part of a Clubs workshop, there are a few things that you should be aware of. You can read about them [here](https://folktale.hackclub.com/guide/clubs)
 
 [Learn more here!](https://hackclub.com/clubs)
 
