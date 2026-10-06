@@ -25,6 +25,8 @@ There's usually one or two flagship with more general prizes, and a bunch more f
 specific. Up to you which one you do, maybe a mix of the flagships and specific programs whose topics you're interested
 in.
 
+If you were really liking the Python stuff and want to do something a bit more complex, check out [Snek](https://snek.hackclub.com/)!
+
 Also, Hack Club Slack! One of the strongest predictors of having amazing experiences in Hack Club is making a friend. Go
 into channels for the things you're interested in (trust me, you'll find one), just start chatting.
 
