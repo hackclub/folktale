@@ -142,11 +142,14 @@ fn render_guide() -> io::Result<Guide> {
 fn render_markdown(markdown: &str, options: Options) -> String {
     let mut events = Vec::new();
     let mut python: Option<String> = None;
+    let mut images: u32 = 0;
     for event in Parser::new_ext(markdown, options) {
         match event {
             Event::Start(Tag::Image { .. }) => {
+                let side = if images % 2 == 0 { "right" } else { "left" };
+                images += 1;
                 events.push(Event::Html(
-                    "<span class=\"guide-image\">".to_string().into(),
+                    format!("<span class=\"guide-image guide-image-{side}\">").into(),
                 ));
                 events.push(event);
             }

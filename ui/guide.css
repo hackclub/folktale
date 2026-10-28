@@ -29,6 +29,7 @@ body {
 }
 
 #guide-content {
+    display: flow-root;
     max-width: 800px;
     margin: 0 auto;
     padding: 64px 32px 32px;
@@ -130,12 +131,30 @@ footer {
 
 .guide-image {
     display: block;
-    float: none;
-    margin: 24px auto;
+    max-width: min(400px, 45%);
+}
+
+.guide-image-right {
+    float: right;
+    margin: 16px 0 16px 32px;
+}
+
+.guide-image-left {
+    float: left;
+    margin: 16px 32px 16px 0;
 }
 
 .guide-image > img {
-    max-width: min(80vw, 500px);
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .guide-image {
+        float: none;
+        max-width: min(80vw, 500px);
+        margin: 24px auto;
+    }
 }
 
 #guide-navigator {
