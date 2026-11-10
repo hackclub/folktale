@@ -8,4 +8,6 @@ The next few sections of the guide cover how to actually make your game, these h
 
 Also, you will not be getting individually mailed stickers. We may send over a box of sticker sheets if a good chunk of a club completes Folktale, but the main rewards within the Clubs world will be Clubs Coins.
 
+Make sure you've got a README.md file in your Github repo with a description of what your project is.
+
 Now, make your way back to <a href="/guide/">the start of the guide</a>, learn Python, and build an awesome little game!
